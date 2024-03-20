@@ -1,4 +1,4 @@
-from l4_always_check_exit_words.prompts import get_input_or_exit
+from draft.l4_always_check_exit_words.prompts import get_input_or_exit
 
 
 def load_admin_page():
