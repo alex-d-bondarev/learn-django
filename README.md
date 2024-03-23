@@ -1,6 +1,6 @@
 # teach-pr
 
-## How to start
+## How to install
 ### Very first time
 ```shell
 django-admin startproject learn_dj
@@ -8,7 +8,10 @@ django-admin startproject learn_dj
 
 ### All other times
 ```shell
-make install
+poetry install
 ```
 
-
+## How to start
+```shell
+python3 ./learn_dj/manage.py runserver
+```

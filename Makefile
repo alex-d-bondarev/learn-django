@@ -16,3 +16,5 @@ clean:
 	@echo "Uninstall python environment"
 	poetry env remove --all
 
+run:
+	python3 ./learn_dj/manage.py runserver
