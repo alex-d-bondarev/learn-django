@@ -17,7 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from learn_dj.learn_dj.views import home_view
+
 urlpatterns = [
-    path('app_example', include('app_example.urls')),
+    path('', home_view),
     path('admin/', admin.site.urls),
+    path('app_example', include('app_example.urls')),
 ]

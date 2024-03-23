@@ -13,7 +13,7 @@ python3 manage.py startapp app_example
 poetry install
 ```
 
-## How to start
+## How to run
 ```shell
 cd learn_dj
 python3 manage.py runserver
