@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound, Http404
 
 
 # Create your views here.
@@ -13,7 +13,11 @@ dynamic_pages = {
 
 
 def dynamic_view(request, topic):
-    return HttpResponse(dynamic_pages[topic])
+    try:
+        return HttpResponse(dynamic_pages[topic])
+    except KeyError:
+        # return HttpResponseNotFound(f'"{topic}" page not found')
+        raise Http404(f'"{topic}" page not found')
 
 
 def sum(request, num_1, num_2):
