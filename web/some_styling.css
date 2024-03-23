@@ -1,0 +1,17 @@
+h1 {
+    color:blue;
+}
+
+div {
+    border-color: orange;
+    border-width: 10px;
+    border-style: dotted;
+}
+
+.pClass {
+    color: grey
+}
+
+#brown {
+    color: brown
+}
