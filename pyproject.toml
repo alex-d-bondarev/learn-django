@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "learn-dj"
+version = "0.1.0"
+description = ""
+authors = ["Sasha Bondarev <5994478+alex-d-bondarev@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "learn_dj"}]
+
+[tool.poetry.dependencies]
+python = "<3.13,>=3.10"
+
+Django = "^5.0.3"
+pytest = "^8.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
