@@ -4,7 +4,8 @@
 ### Very first time
 ```shell
 django-admin startproject learn_dj
-python3 ./learn_dj/manage.py startapp my_app
+cd learn_dj
+python3 manage.py startapp app_example
 ```
 
 ### All other times
@@ -14,5 +15,6 @@ poetry install
 
 ## How to start
 ```shell
-python3 ./learn_dj/manage.py runserver
+cd learn_dj
+python3 manage.py runserver
 ```
