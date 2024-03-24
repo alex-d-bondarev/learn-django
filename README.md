@@ -18,3 +18,12 @@ poetry install
 cd learn_dj
 python3 manage.py runserver
 ```
+
+## How to add templates
+```shell
+cd learn_dj
+python3 manage.py migrate
+# After updating settings.py
+python3 manage.py makemigrations app_example
+python3 manage.py migrate
+```

@@ -1,4 +1,5 @@
 from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect
+from django.shortcuts import render
 from django.urls import reverse
 
 
@@ -33,3 +34,8 @@ def dynamic_mapping_view(request, num_page):
 
 def sum(request, num_1, num_2):
     return HttpResponse(str(num_1 + num_2))
+
+
+def template_example(request):
+    # app_example/templates/app_example/template_example.html
+    return render(request, 'app_example/template_example.html')
