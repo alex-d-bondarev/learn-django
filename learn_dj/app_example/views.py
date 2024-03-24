@@ -48,7 +48,10 @@ def template_example(request):
         'first_name': 'Rosalind',
         'last_name': 'Franklin',
         'some_list': [1, 2, 3],
-        'some_dict': {'inside_key': 'inside_value'},
+        'some_dict': {
+            'inside_key': 'inside_value',
+            'key_2': 'value_2',
+        },
     }
 
     return render(

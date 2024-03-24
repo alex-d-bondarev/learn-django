@@ -9,9 +9,23 @@
 <h1>This is a template example</h1>
 <h2>This is a 'first_name' value: "{{first_name}}"</h2>
 <h2>This is a 'last_name' value: "{{last_name}}"</h2>
-<h2>This is the first item from the 'some_list' value: "{{some_list.0}}"</h2>
-<h2>This is the inside_key item from the 'some_dict' value: "{{some_dict.inside_key}}"</h2>
 <h2>You should not see comments: "{# comment #}"</h2>
+
+<h2>This is the first item from the 'some_list' value: "{{some_list.0}}"</h2>
+<h2>This list is generated from the 'some_list' list:</h2>
+<ul>
+    {% for number in some_list %}
+    <li>{{number}}</li>
+    {% endfor %}
+</ul>
+
+<h2>This is the inside_key item from the 'some_dict' value: "{{some_dict.inside_key}}"</h2>
+<h2>This list is generated from the 'some_dict' dictionary:</h2>
+<ul>
+    {% for key, value in some_dict.items %}
+    <li>{{key}} = {{value}}</li>
+    {% endfor %}
+</ul>
 </body>
 
 </html>
