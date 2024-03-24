@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 <h1>Here are a few links</h1>
 <ul>
     <li><a href="{% url 'app_example:template' %}">Click to open templates</a></li>
 </ul>
+
+<h3>Using Python Django</h3>
+<img
+        src="{% static 'app_example/django-basics.png' %}"
+        alt="django-basics.png"
+        style="width:100px;height:auto">
 {% endblock content %}
