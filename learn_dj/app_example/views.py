@@ -1,11 +1,16 @@
-from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect
+from django.http import (
+    Http404,
+    HttpResponse,
+    HttpResponseNotFound,
+    HttpResponseRedirect,
+)
 from django.shortcuts import render
 from django.urls import reverse
 
 
 # Create your views here.
 def index(request):
-    return HttpResponse("The is a new view!")
+    return HttpResponse('The is a new view!')
 
 
 dynamic_pages = {
@@ -38,4 +43,14 @@ def sum(request, num_1, num_2):
 
 def template_example(request):
     # app_example/templates/app_example/template_example.html
-    return render(request, 'app_example/template_example.html')
+
+    template_vars = {
+        'first_name': 'Rosalind',
+        'last_name': 'Franklin',
+        'some_list': [1, 2, 3],
+        'some_dict': {'inside_key': 'inside_value'},
+    }
+
+    return render(
+        request, 'app_example/template_example.html', context=template_vars
+    )
