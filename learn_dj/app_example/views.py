@@ -1,4 +1,5 @@
 from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect
+from django.urls import reverse
 
 
 # Create your views here.
@@ -24,7 +25,10 @@ def dynamic_view(request, topic):
 def dynamic_mapping_view(request, num_page):
     topics = list(dynamic_pages.keys())
     topic = topics[num_page]
-    return HttpResponseRedirect(f'/app_example/{topic}/')
+    # return HttpResponseRedirect(f'/app_example/{topic}/')
+
+    webpage = reverse('topic-page', args=[topic])
+    return HttpResponseRedirect(webpage)
 
 
 def sum(request, num_1, num_2):

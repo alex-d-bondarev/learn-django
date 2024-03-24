@@ -4,6 +4,6 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('<int:num_page>/', views.dynamic_mapping_view),
-    path('<str:topic>/', views.dynamic_view),
+    path('<str:topic>/', views.dynamic_view, name='topic-page'),
     path('<int:num_1>/<int:num_2>', views.sum),
 ]
