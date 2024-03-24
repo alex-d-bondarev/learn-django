@@ -15,7 +15,11 @@
 <h2>This list is generated from the 'some_list' list:</h2>
 <ul>
     {% for number in some_list %}
-    <li>{{number}}</li>
+        {% if number == 2 %}
+            <li>TWO</li>
+        {% else %}
+            <li>{{number}}</li>
+        {% endif %}
     {% endfor %}
 </ul>
 
@@ -27,5 +31,10 @@
     {% endfor %}
 </ul>
 </body>
+
+<h2>If statements in Jinja:</h2>
+    {% if user_logged_in %}
+        <h3>User is logged in</h3>
+    {% endif %}
 
 </html>

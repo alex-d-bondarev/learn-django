@@ -52,6 +52,7 @@ def template_example(request):
             'inside_key': 'inside_value',
             'key_2': 'value_2',
         },
+        'user_logged_in': False,
     }
 
     return render(
