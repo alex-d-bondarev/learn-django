@@ -58,3 +58,9 @@ def template_example(request):
     return render(
         request, 'app_example/template_example.html', context=template_vars
     )
+
+
+def links(request):
+    return render(
+        request, 'app_example/links.html'
+    )
