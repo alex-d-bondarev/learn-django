@@ -9,5 +9,6 @@ urlpatterns = [
     path('topics/<str:topic>/', views.dynamic_view, name='topic-page'),
     path('sum/<int:num_1>/<int:num_2>', views.sum, name='sum'),
     path('template/', views.template_example, name='template'),
-    path('links/', views.links, name='links')
+    path('transactions/', views.all_transactions, name='transactions'),
+    path('links/', views.links, name='links'),
 ]

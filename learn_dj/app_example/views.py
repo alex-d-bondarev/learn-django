@@ -7,6 +7,8 @@ from django.http import (
 from django.shortcuts import render
 from django.urls import reverse
 
+from .models import Transaction
+
 
 # Create your views here.
 def index(request):
@@ -61,6 +63,11 @@ def template_example(request):
 
 
 def links(request):
+    return render(request, 'app_example/links.html')
+
+
+def all_transactions(request):
+    all_transactions = {'transactions': Transaction().get_all()}
     return render(
-        request, 'app_example/links.html'
+        request, 'app_example/transactions.html', context=all_transactions
     )
