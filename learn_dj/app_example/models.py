@@ -40,7 +40,7 @@ class Transaction:
 
         return rows
 
-    def insert_new_transaction(self, transaction_data):
+    def insert_new(self, transaction_data):
         insert_transaction_template = """
         INSERT INTO transaction (income, expenditure, description, date_time, company_id) 
              VALUES (%(income)s, %(expenditure)s, "%(description)s", %(date_time)s, %(company_id)s)"""
@@ -65,7 +65,7 @@ def test_get_all():
 
     transaction_obj = Transaction()
     before = transaction_obj.get_all()
-    transaction_obj.insert_new_transaction(new_record)
+    transaction_obj.insert_new(new_record)
     after = transaction_obj.get_all()
 
     print(f'BEFORE:\n"{before}"\nAFTER:\n{after}')

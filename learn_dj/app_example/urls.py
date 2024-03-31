@@ -10,5 +10,6 @@ urlpatterns = [
     path('sum/<int:num_1>/<int:num_2>', views.sum, name='sum'),
     path('template/', views.template_example, name='template'),
     path('transactions/', views.all_transactions, name='transactions'),
+    path('new_transaction/', views.new_transaction, name='new_transaction'),
     path('links/', views.links, name='links'),
 ]

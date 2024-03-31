@@ -4,9 +4,10 @@ from django.http import (
     HttpResponseNotFound,
     HttpResponseRedirect,
 )
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 
+from .forms import TransactionForm
 from .models import Transaction
 
 
@@ -71,3 +72,18 @@ def all_transactions(request):
     return render(
         request, 'app_example/transactions.html', context=all_transactions
     )
+
+
+def new_transaction(request):
+
+    if request.method == 'POST':
+        form = TransactionForm(request.POST)
+        if form.is_valid():
+            Transaction().insert_new(form.cleaned_data)
+            return redirect(reverse('app_example:transactions'))
+    else:
+        form = TransactionForm()
+        context = {'form': form}
+        return render(
+            request, 'app_example/new_transaction.html', context=context
+        )
