@@ -27,3 +27,16 @@ python3 manage.py migrate
 python3 manage.py makemigrations app_example
 python3 manage.py migrate
 ```
+
+## How to run docker
+```shell
+# Build
+docker build --platform linux/amd64 -t learn_dj .
+
+# Run
+docker run --platform linux/amd64 --rm -it -p 80:8000 learn_dj
+# Links like http://127.0.0.1/app_example/links/ should start working
+
+# Debug
+docker run --platform linux/amd64 --rm -it -p 80:8000 --entrypoint bash learn_dj
+```

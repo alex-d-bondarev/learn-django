@@ -1,6 +1,6 @@
 install:
 	@echo "Set poetry with the current python version"
-	poetry env use `python --version | grep -Eo '[0-9]+([.][0-9]+)+([.][0-9]+)?'`
+	poetry env use `python3 --version | grep -Eo '[0-9]+([.][0-9]+)+([.][0-9]+)?'`
 	@echo "Install dependencies"
 	poetry install
 	$(MAKE) path
