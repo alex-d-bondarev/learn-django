@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from django.http import (
     Http404,
     HttpResponse,
@@ -87,3 +89,9 @@ def new_transaction(request):
         return render(
             request, 'app_example/new_transaction.html', context=context
         )
+
+
+def hello(request):
+    hello_path = Path(__file__).resolve().parent / 'files' / 'hello.html'
+    with open(hello_path) as h_file:
+        return HttpResponse(h_file.read())

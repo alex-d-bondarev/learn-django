@@ -37,6 +37,12 @@ docker build --platform linux/amd64 -t learn_dj .
 docker run --platform linux/amd64 --rm -it -p 80:8000 learn_dj
 # Links like http://127.0.0.1/app_example/links/ should start working
 
-# Debug
+# Start and Debug
 docker run --platform linux/amd64 --rm -it -p 80:8000 --entrypoint bash learn_dj
+
+# Debug the running container
+docker ps
+docker exec -it <CONTAINER ID> bash
+# update "/project/learn_dj/app_example/files" file 
+# and check http://127.0.0.1/app_example/hello/ for updates
 ```
