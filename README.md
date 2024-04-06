@@ -28,17 +28,22 @@ python3 manage.py makemigrations app_example
 python3 manage.py migrate
 ```
 
-## How to run docker
+## General docker
 ```shell
 # Build
-docker build --platform linux/amd64 -t learn_dj .
+export TAG="demo"
+docker build -t alexdbondarev/learn-django:${TAG} .
 
 # Run
-docker run --platform linux/amd64 --rm -it -p 80:8000 learn_dj
+docker run --rm -it -p 80:8000 alexdbondarev/learn-django:${TAG}
+docker run -d -p 80:8000 alexdbondarev/learn-django:${TAG} # as daemon
 # Links like http://127.0.0.1/app_example/links/ should start working
 
+# Push
+docker push alexdbondarev/learn-django:${TAG}
+
 # Start and Debug
-docker run --platform linux/amd64 --rm -it -p 80:8000 --entrypoint bash learn_dj
+docker run --rm -it -p 80:8000 --entrypoint bash alexdbondarev/learn-django:${TAG}
 
 # Debug the running container
 docker ps
@@ -46,3 +51,24 @@ docker exec -it <CONTAINER ID> bash
 # update "/project/learn_dj/app_example/files" file 
 # and check http://127.0.0.1/app_example/hello/ for updates
 ```
+
+## Raspberry Py 3 Docker demo
+```shell
+# Build and push
+export ARM_TAG="demo-arm"
+poetry export -f requirements.txt --output requirements.txt
+docker build --platform linux/arm/v7 -f Dockerfile-arm -t alexdbondarev/learn-django:${ARM_TAG} .
+docker run --platform linux/arm/v7 --rm -it -p 80:8000 alexdbondarev/learn-django:${ARM_TAG}
+docker push alexdbondarev/learn-django:${ARM_TAG}
+
+ 
+
+# Pull and start an image
+docker pull alexdbondarev/learn-django:demo-arm
+docker run -d -p 80:8000 alexdbondarev/learn-django:demo-arm
+
+# Install ngrok
+# use commands from https://dashboard.ngrok.com/get-started/setup/linux to install and set token
+ngrok http http://localhost:80
+```
+

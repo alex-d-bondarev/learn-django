@@ -1,0 +1,15 @@
+FROM python:3.11-slim
+
+RUN mkdir -p project
+
+ENV PATH="/root/.local/bin:${PATH}"
+
+COPY . /project
+WORKDIR /project
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+WORKDIR /project/learn_dj
+
+EXPOSE 8000
+ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
