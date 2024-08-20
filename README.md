@@ -1,5 +1,8 @@
 # teach-pr
 
+> [!NOTE]  
+> **Archived** since I have learned what I planned to an no longer plan to commit new changes
+
 ## How to install
 ### Very first time
 ```shell
