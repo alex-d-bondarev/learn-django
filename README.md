@@ -1,4 +1,4 @@
-# teach-pr
+# learn-django
 
 > [!NOTE]  
 > **Archived** since I have learned what I planned to an no longer plan to commit new changes
